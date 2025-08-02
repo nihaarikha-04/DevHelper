@@ -1,0 +1,88 @@
+body {
+  font-family: 'Exo 2';
+  background-color: #DED3C4;
+  margin: 0;
+  color: #555879;
+}
+
+header {
+  background-color: #F4EBD3;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #98A1BC;
+  margin: 0;
+}
+
+nav {
+  margin: 10px 0;
+  background-color: #98A1BC;
+  text-align: center;
+}
+
+nav a{
+  margin-right: 10px;
+  color: #F4EBD3;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 20px auto;
+  gap: 12px;
+}
+
+.auth-form input {
+  padding: 10px;
+  border: 1px solid #DED3C4;
+  border-radius: 5px;
+}
+
+.auth-form button {
+  background-color: #98A1BC;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #555879;
+}
+
+li {
+  border: 1px solid #DED3C4;
+  padding: 12px;
+  bottom: 10px;
+  background-color: white;
+  margin-bottom: 12px;
+}
+
+code, pre {
+  background-color: #DED3C4;
+  padding: 10px;
+  display: block;
+  border-radius: 10px;
+  overflow-x: auto                        ;
+}
+
+button {
+  background-color: #98A1BC;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+button:hover {
+  background-color: #555879;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #DED3C4;
+  border-radius: 5px;
+}

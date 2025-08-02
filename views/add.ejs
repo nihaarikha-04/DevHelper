@@ -1,0 +1,14 @@
+<%- include("partials/header") %>
+<h2>Add a New Code Snippet</h2>
+<form action="/add-snippet" method="POST" class="auth-form">
+  <label for="title">Title:</label>
+  <input type="text" name="title" placeholder="Title" required>
+  <label for="language">Language:</label>
+  <input type="text" name="language" placeholder="Language" required>
+  <label for="content">Code Snippet:</label>
+  <textarea name="content" rows="8" cols="50" placeholder="Paste your code here." required></textarea>
+  <label for="tags">Tags:</label>
+  <input type="text" name="tags" placeholder="Tags" required>
+  <button type="submit">Save</button>
+</form>
+<%- include("partials/footer") %>

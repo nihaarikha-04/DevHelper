@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+<h2>All saved Snippets</h2>
+<% if(snippets.length === 0) { %>
+  <p>No Snippets Saved.</p>
+<% } else { %>
+  <form action="/snippets" method="GET" class="search-form" style="margin-bottom: 20px;">
+    <label for="tag">Filter By Tag:</label>
+    <input type="text" id="tag" name="tag" placeholder="Search by tags" required>
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+    <% snippets.forEach(snippet => { %>
+      <li style="margin-bottom: 20px;">
+        <strong>Title:</strong> <%= snippet.title %> </br>
+        <strong>Language:</strong> <%= snippet.language %>
+        </br>
+        <strong>Tags:</strong> <%= snippet.tags.join(", ") %>
+        </br>
+        <strong>Created At:</strong> <%= snippet.createdAt.toDateString() %>
+        </br>
+        <pre><code><%= snippet.content %></code></pre>
+        <form action="/delete-snippet/<%= snippet._id %>" method="POST" style="display:inline;">
+          <button type="submit">Delete</button>
+        </form>
+        <form action="/edit-snippet/<%= snippet._id %>" method="GET" style="display:inline;">
+          <button type="submit">Edit</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+<% } %>
+<%- include("partials/footer") %>

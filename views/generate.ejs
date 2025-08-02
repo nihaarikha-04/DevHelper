@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+<h2>AI Code Generator</h2>
+<form action="/generate" method="POST" class="auth-form">
+  <label for="prompt">Enter your prompt:</label>
+  </br>
+  <textarea id="prompt" name="prompt" rows="4" cols="50" required><%= prompt || "" %></textarea>
+  </br>
+  <button type="submit">Generate Code</button>
+</form>
+<% if (snippetContent) { %>
+  <h3>Generated Code:</h3>
+  <pre><code><%= snippetContent %></code></pre>
+  <% if(userId) { %>
+    <form action="/save-snippet" method="POST">
+      <input type="hidden" name="content" value="<%= snippetContent %>">
+      <input type="hidden" name="title" value="Generated Snippet">
+      <input type="hidden" name="language" value="JavaScript">
+      <input type="hidden" name="tags" value="">
+      <button type="submit">Save Snippet</button>
+    </form>
+  <% } else { %>
+    <p><a href="/login">Login</a> to save this snippet.</p>
+  <% } %>
+<% } %>
+<%- include("partials/footer") %>
